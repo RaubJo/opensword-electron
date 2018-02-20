@@ -1,0 +1,99 @@
+#interface {
+    border:solid #65B3D7 thick;
+    background-color: #65B3D7;
+    height:100%;
+    border-radius: 5px;
+}
+
+#row3 td {
+
+}
+
+#row3 {
+
+}
+
+#referenceWrapper {
+    width:5%;
+}
+
+#referenceWrapper table {
+    height:100%;
+}
+
+#booksWrapper {
+    width:50%;
+
+}
+
+#chaptersWrapper {
+    width:50%;
+}
+
+
+#row4 {
+
+}
+
+#row5 {
+    height:5%;
+}
+
+#search_bar_wrapper{
+    display: inline-flex;
+}
+#search_input {
+    width:70%;
+}
+#search {
+    text-align: center;
+    width:30%;
+}
+
+.navMenu {
+    position:fixed;
+    z-index: 1;
+}
+
+#booklist {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: 9pt;
+}
+
+#chapterList {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: 9pt;
+}
+
+#bibleContent {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+
+#selected {
+    width: inherit;
+}
+
+.highlighted {
+    border: 1px solid #dad55e;
+    background: #fffa90;
+    color:black;
+}
+
+.dictionaryRef {
+    color:blue;
+    text-decoration: underline;
+}
+
+.dictionaryRef hover{
+    color:red;
+    text-decoration: underline;
+}
+
+.text {
+  background-color: #ffffff;
+}

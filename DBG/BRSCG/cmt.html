@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+		<meta charset="UTF-8"/>
+	</head>
+	<script type="text/javascript" src="../jquery.js"></script>
+	<script>
+	var sections;
+		$(document).ready(function () {
+			$("#add").on('click',function () {
+				$("#area").empty();
+				sections = document.getElementById('sectionInput').value - 1;
+				for(var i = 0;i <= sections;i++){
+					$("#area").append("<li id='" + i + "'></li>");
+					popSec("#" + i,i);
+				}
+				
+			});
+		});
+
+		function popSec(id,i) {
+			$(id).append("<input id='section" + i + "' type='text' value='heading'/>");
+			$(id).append("<input id='sectionvs" + i + "' type='text' value='number'/>");
+			$(id).append("<button id='sectionSubmit" + i + "'>Add...</button>");
+			$(id).append("<ul id='sub" + i + "'></ul>");
+			setTimeout(initSectionListener('#sectionSubmit' + i),500);
+		}
+		function initSectionListener(id) {
+			$(id).on('click',function () {
+				console.log(id);
+				setTimeout(popRef(id),500);
+			});
+		}
+
+		function popRef(id) {
+			id = id.slice(14);
+			var listId = "#sub" + id;
+			console.log(id);
+			console.log(listId);
+			var amount = parseInt(document.getElementById('sectionvs' + id).value-1);
+			for(var i = 0;i <= amount;i++){
+				$(listId).append("<li><input type='text'/></li>");
+			}
+		}
+
+
+
+
+	</script>
+	<body>
+		<div id="inputs">
+			<p>How many sections?</p>
+			<input type="text" id="sectionInput"/>
+			<button type="submit" id="add">Add...</button>
+			<button id="done">Done</button>
+		</div>
+		<div>
+			<ol id='area'>
+				<li>
+					<input id="section1" type="text"/>
+					<input id="sectionvs1" type="text"/>
+					<button id="sectionsubmit1">Add...</button>
+					<ul>
+						<br/>
+						<li><input type="text" id="section1vsr1"></li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+	</body>
+</html>

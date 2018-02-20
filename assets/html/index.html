@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html style="height:100%">
+    <head>
+        <title>Open-Sword</title>
+        <meta charset="UTF-8">
+    </head>
+    <link rel="stylesheet" type="text/css" href="./../css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="./../css/ui_themes/jquery-ui.css">
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="./../js/libs/jquery.js"></script>
+    <script src="./../js/libs/jquery_ui/jquery-ui.js"></script>
+    <script src="./../js/ajaxLoader.js"></script>
+    <script src="./../js/sword.js"></script>
+    <script>if (window.module) module = window.module;</script>
+    <body>
+      <table id="interface" style="width: 100%; height:100%;">
+        <tr id="row3">
+            <td id="referenceWrapper" rowspan="3">
+                <table width="100%">
+                    <tr>
+                        <td id="booksWrapper" rowspan="3">
+                          <ul id="booklist">
+                              <li><div onClick="selectBook('1')">Genesis</div></li>
+                              <li><div onClick="selectBook('2')">Exodus</div></li>
+                              <li><div onClick="selectBook('3')">Leviticus</div></li>
+                              <li><div onClick="selectBook('4')">Numbers</div></li>
+                              <li><div onClick="selectBook('5')">Deuteronomy</div></li>
+                              <li><div onClick="selectBook('6')">Joshua</div></li>
+                              <li><div onClick="selectBook('7')">Judges</div></li>
+                              <li><div onClick="selectBook('8')">Ruth</div></li>
+                              <li><div onClick="selectBook('9')">1 Samuel</div></li>
+                              <li><div onClick="selectBook('10')">2 Samuel</div></li>
+                              <li><div onClick="selectBook('11')">1 Kings</div></li>
+                              <li><div onClick="selectBook('12')">2 Kings</div></li>
+                              <li><div onClick="selectBook('13')">1 Chronicles</div></li>
+                              <li><div onClick="selectBook('14')">2 Chronicles</div></li>
+                              <li><div onClick="selectBook('15')">Ezra</div></li>
+                              <li><div onClick="selectBook('16')">Nehemiah</div></li>
+                              <li><div onClick="selectBook('17')">Esther</div></li>
+                              <li><div onClick="selectBook('18')">Job</div></li>
+                              <li><div onClick="selectBook('19')">Psalms</div></li>
+                              <li><div onClick="selectBook('20')">Proverbs</div></li>
+                              <li><div onClick="selectBook('21')">Ecclesiastes</div></li>
+                              <li><div onClick="selectBook('22')">Song of Solomon</div></li>
+                              <li><div onClick="selectBook('23')">Isaiah</div></li>
+                              <li><div onClick="selectBook('24')">Jeremiah</div></li>
+                              <li><div onClick="selectBook('25')">Lamentations</div></li>
+                              <li><div onClick="selectBook('26')">Ezekiel</div></li>
+                              <li><div onClick="selectBook('27')">Daniel</div></li>
+                              <li><div onClick="selectBook('28')">Hosea</div></li>
+                              <li><div onClick="selectBook('29')">Joel</div></li>
+                              <li><div onClick="selectBook('30')">Amos</div></li>
+                              <li><div onClick="selectBook('31')">Obadiah</div></li>
+                              <li><div onClick="selectBook('32')">Jonah</div></li>
+                              <li><div onClick="selectBook('33')">Micah</div></li>
+                              <li><div onClick="selectBook('34')">Nahum</div></li>
+                              <li><div onClick="selectBook('35')">Habakkuk</div></li>
+                              <li><div onClick="selectBook('36')">Zephaniah</div></li>
+                              <li><div onClick="selectBook('37')">Haggai</div></li>
+                              <li><div onClick="selectBook('38')">Zechariah</div></li>
+                              <li><div onClick="selectBook('39')">Malachi</div></li>
+                              <li><div onClick="selectBook('40')">Matthew</div></li>
+                              <li><div onClick="selectBook('41')">Mark</div></li>
+                              <li><div onClick="selectBook('42')">Luke</div></li>
+                              <li><div onClick="selectBook('43')">John</div></li>
+                              <li><div onClick="selectBook('44')">Acts</div></li>
+                              <li><div onClick="selectBook('45')">Romans</div></li>
+                              <li><div onClick="selectBook('47')">2 Corinthians</div></li>
+                              <li><div onClick="selectBook('48')">Galatians</div></li>
+                              <li><div onClick="selectBook('49')">Ephesians</div></li>
+                              <li><div onClick="selectBook('50')">Philippians</div></li>
+                              <li><div onClick="selectBook('51')">Colossians</div></li>
+                              <li><div onClick="selectBook('52')">1 Thessalonians</div></li>
+                              <li><div onClick="selectBook('46')">1 Corinthians</div></li>
+                              <li><div onClick="selectBook('53')">2 Thessalonians</div></li>
+                              <li><div onClick="selectBook('54')">1 Timothy</div></li>
+                              <li><div onClick="selectBook('55')">2 Timothy</div></li>
+                              <li><div onClick="selectBook('56')">Titus</div></li>
+                              <li><div onClick="selectBook('57')">Philemon</div></li>
+                              <li><div onClick="selectBook('58')">Hebrews</div></li>
+                              <li><div onClick="selectBook('59')">James</div></li>
+                              <li><div onClick="selectBook('60')">1 Peter</div></li>
+                              <li><div onClick="selectBook('61')">2 Peter</div></li>
+                              <li><div onClick="selectBook('62')">1 John</div></li>
+                              <li><div onClick="selectBook('63')">2 John</div></li>
+                              <li><div onClick="selectBook('64')">3 John</div></li>
+                              <li><div onClick="selectBook('65')">Jude</div></li>
+                              <li><div onClick="selectBook('66')">Revelation</div></li>
+                          </ul>
+                  </td>
+                  <td id="chaptersWrapper" rowspan="3">
+                      <ul id="chapterList" class="list"></ul>
+                  </td>
+              </tr>
+          </table>
+        </td>
+        <td id="Bible" colspan="1" rowspan="2">
+            <div id="bibleContent"></div>
+        </td>
+        <td id="commentaries" colspan="1" class="text">
+            <div id="cmtContent"></div>
+        </td>
+        <tr>
+
+          <td rowspan="2"><textarea style="width:100%; height:100%; resize:none;"></textarea></td>
+
+        </tr>
+              <tr style="height:35%;">
+                <td id="dictionaries" colspan="1" class="text">
+                    <div id="dicContent"></div>
+                </td>
+
+              </tr>
+              <tr style="height:4%;">
+                <td id="selWrap">
+                        <input id="selected" type="text" name="selected">
+                </td>
+                <td></td>
+                <td></td>
+              </tr>
+      </table>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "open.sword.module.generator",
+  "version": "1.0.0",
+  "description": "gens",
+  "main": "dbg.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Jackle",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.7.5",
+    "electron-builder": "^19.53.7"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "nedb": "^1.8.0"
+  }
+}

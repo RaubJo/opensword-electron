@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>WebSword Resource Creator</title>
+		<meta charset="UTF-8">
+	</head>
+
+	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+	<!-- normal script imports etc  -->
+	<script src="jquery.js"></script>
+
+	<!-- Insert this line after script imports -->
+	<script>if (window.module) module = window.module;</script>
+	<script>
+	var vsi = '<li><input type="text"></li>';
+	$(document).ready(function() {
+	    $("#genList").on('click',function () {
+	    data = [];
+	    //$("#result").empty();
+	    //$("#result").append("<ol id='inputList'></ol>");
+	    $("#inputList").empty();
+	    var length = parseInt(document.getElementById('amount').value - 1);
+	    for(var i = 0;i<=length;i++){
+	      $("#inputList").append(vsi);
+	    }
+	    setTimeout(initListener,500);
+	  });
+
+
+		class entry {
+		  constructor(){
+		    this.book = Number,
+		    this.chapter = Number,
+		    this.verse = Number,
+		    this.text = String
+		  }
+		};
+var nedb = require('nedb');
+	function initListener() {
+	  $("#genSource").on('click', function () {
+			var cdb = new nedb({filename: $("#name").val(), autoload:true});
+			//var current = new entry();
+	    for(var i = 0;i < ($("#inputList li").length);i++){
+				var current = new entry();
+	      data[i] = $($("#inputList li input").get(i)).val();
+	      v = i+1;
+				current.book = $("#bookNum").val();
+				current.chapter = $("#chapter").val();
+				current.verse = v;
+				current.text = $($("#inputList li input").get(i)).val();
+				cdb.insert(current, function(err){console.log("hit")});
+	    }
+	  });
+	}
+	});
+
+	</script>
+	<body>
+		<input id="name" value="Book Name"/>
+		<input id="bookNum" value="Book Number"/>
+		<input id="chapter" value="Chapter Number"/>
+		<input id="amount" />
+		<button id="genList">Add..</button>
+		<button id="genSource">Export DB</button>
+		<br/>
+		<div id="result">
+			<ol id='inputList'></ol>
+		</div>
+	</body>
+
+	<style>
+		#amount {
+			width:2%;
+		}
+
+		#inputList li input {
+			width:75%;
+		}
+	</style>
+</html>
